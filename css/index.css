@@ -6,7 +6,93 @@
     box-sizing: border-box;
 }
 
+:root {
+    --bg-color: #f0f4f8;
+    --card-bg: #ffffff;
+    --text-color: #333;
+    --accent-color: #0077b6;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --early: #8599a5;
+    --amber: #accfe5;
+    --noon: #e5fafc;
+}
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #565454;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    padding: 1em;
+    line-height: 1.5;
+}
+
+h1 {
+    text-align: center;
+    margin: 1em 0;
+}
+
+.select {
+    margin-bottom: 1em;
+}
+
+select {
+    padding: 0.3em;
+    border-radius: 0.3em;
+}
+
+select:focus {
+    outline: none;
+}
+
+.weather-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1em;
+}
+
+.day {
+    text-align: center;
+    background-color: var(--card-bg);
+    border-radius: 0.5em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1em;
+    max-height: 300px;
+    overflow-y: scroll;
+    transition: background-color 0.5s ease;
+}
+
+.early {
+    background-color: var(--early);
+}
+
+.amber {
+    background-color: var(--amber);
+}
+
+.noon {
+    background-color: var(--noon);
+}
+
+.day h2 {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+.title {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 1em;
+}
+
+.hourly {
+    text-align: right;
+    display: flex;
+    padding: 0.25rem 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+    justify-content: space-around;
+}
+
+.hour:last-child {
+    border-bottom: none;
 }
